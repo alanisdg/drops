@@ -14,9 +14,9 @@ class AddFieldsToUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('fb_avatar');
-            $table->string('fb_id');
-            $table->string('avatar_original');
+            $table->string('fb_avatar')->nullable();
+            $table->string('fb_id')->nullable();
+            $table->string('avatar_original')->nullable();
         });
     }
 
