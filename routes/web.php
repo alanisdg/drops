@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/privacy-policy', function () {
+    return view('privacy');
+});
+
 Route::get('auth/facebook', [App\Http\Controllers\SocialController::class,'facebookRedirect']  );
 Route::get('auth/facebook/callback', [App\Http\Controllers\SocialController::class,'loginWithFacebook']  );
 
