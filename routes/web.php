@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('auth/facebook', [App\Http\Controllers\SocialController::class,'facebookRedirect']  );
+Route::get('auth/facebook/callback', [App\Http\Controllers\SocialController::class,'loginWithFacebook']  );
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

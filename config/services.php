@@ -29,5 +29,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'facebook' => [
+        'client_id' => '3982437171854638',
+        'client_secret' => '52023306944e4ef22d794fafbf334189',
+        'redirect' => 'https://llucu.com/auth/facebook/callback',
+    ],
 
 ];

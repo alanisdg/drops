@@ -6,3 +6,28 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.home{
+    background-color: $indigo;
+}
+.text-menta{
+    color: $menta;
+}
+.heading{
+    font-size: 50px;
+}
+.padding-heading{
+    padding: 15px 0px;
+}
+.facebook-button{
+    border: none;
+    padding: 5px 30px;
+    border-radius: 20px;
+    color: white;
+    background-color: #2736bd;
+}
+.facebook-button:hover{
+
+    background-color: #1e2caa;
+}
+
