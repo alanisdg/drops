@@ -21,7 +21,7 @@ class SocialController extends Controller
         try {
 
             $user = Socialite::driver('facebook')->user();
-            dd($user);
+
             $isUser = User::where('fb_id', $user->id)->first();
 
             if($isUser){
@@ -32,6 +32,8 @@ class SocialController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'fb_id' => $user->id,
+                    'fb_avatar' => $user->avatar,
+                    'fb_avatar_original' => $user->avatar_original,
                     'password' => encrypt('admin@123')
                 ]);
 
