@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-<autocomplete-component></autocomplete-component>
+<webrtc-component token="{{$token}}"></webrtc-component>
 
 @endsection

@@ -10871,6 +10871,35 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@media (min-width: 576px) {
+  .h-sm-100 {
+    height: 100%;
+  }
+}
+.w100 {
+  width: 100%;
+}
+
+.online {
+  color: #5ae75a;
+  width: 7px;
+}
+
+.offline {
+  color: #808080;
+  width: 7px;
+}
+
+.bg-llucu {
+  background-color: #f3e6ff;
+  border-right: 1px solid #e3c4ff;
+}
+
+.match {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 10px;
+}
+
 .home {
   background-color: #46196E;
 }
@@ -10897,4 +10926,71 @@ textarea.form-control-lg {
 
 .facebook-button:hover {
   background-color: #1e2caa;
+}
+
+.button {
+  background: white;
+  border: 1px solid #ddc5e3;
+  padding: 8px 100px;
+  color: #9866be;
+  border-radius: 18px;
+  margin: 5px;
+}
+
+.button:hover {
+  background: #f2e8fb;
+}
+
+.bodyn {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  padding-top: 40px;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type=email] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type=password] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.modal-registration {
+  border: 1px solid #e6b4ff;
+  width: 50%;
+  padding: 50px;
+  border-radius: 12px;
+}
+
+.heading {
+  color: #720397;
+  font-size: 18px;
+}
+
+.center-datepicker {
+  text-align: center;
+  width: 155px;
+  margin: 0 auto;
 }

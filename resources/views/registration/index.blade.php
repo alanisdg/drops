@@ -1,6 +1,4 @@
 @extends('layouts.app')
 @section('content')
-
-<autocomplete-component></autocomplete-component>
-
+<register-component></register-component>
 @endsection
