@@ -8,5 +8,6 @@
 
 <profile-component></profile-component>
 
+<sockets-component></sockets-component>
 
 @endsection
