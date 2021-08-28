@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-6 pt-5">
             <h3 class="text-white">
-                El mejor sitio de citas online
+                El mejor sitio de citas online LINUX
             </h3>
             <h1 class="heading text-menta">
                 <strong>
