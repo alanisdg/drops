@@ -19,12 +19,15 @@
 </template>
 
 <script>
+import { mapState , mapMutations, mapGetters , mapActions} from 'vuex'
+
 export default {
     data: () => ({
         show:0,
         prospects:[]
     }),
     methods:{
+        ...mapActions(['newFusion']),
         getProspects(){
             axios.post('prospects').then(res=>{
                 console.log(res)
@@ -34,9 +37,9 @@ export default {
         swipe(move,target_id){
             axios.post('swipe',{move,target_id}).then(res=>{
                 console.log(res)
-                if(res.data == 1){
+                if(res.data.result == 1){
                     alert('match')
-
+                    this.newFusion(res.data.fusion)
                 }
                 this.show++
             })

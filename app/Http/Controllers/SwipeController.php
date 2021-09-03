@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fusion;
 use App\Models\Swipe;
-use App\Models\Match;
 use App\Models\Meet;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,33 +28,45 @@ class SwipeController extends Controller
                 'swipe'=>0
             ]);
         }
-        $match = Swipe::where('swiper_id',$request->target_id)->where('target_id',Auth::user()->id)->where('swipe',1)->count();
-        if($match == 1){
-            // @ts-ignore
-            Match::create([
-                'user_id'=>Auth::user()->id,
-                'match_id'=>$request->target_id
-            ]);
-
-            Match::create([
-                'user_id'=>$request->target_id,
-                'match_id'=>Auth::user()->id
-            ]);
-
-            if(Auth::user()->gender == 0){
+        $result = Swipe::where('swiper_id',$request->target_id)->where('target_id',Auth::user()->id)->where('swipe',1)->count();
+        $fusion = 0;
+        if($result == 1){
+            if(Auth::user()->getAttributes()['gender'] == 1){
                 $boy = Auth::user()->id;
                 $girl = $request->target_id;
             }else{
                 $girl = Auth::user()->id;
                 $boy = $request->target_id;
             }
-            Meet::create([
+
+            $meet = Meet::create([
                 'boy_id'=>$boy,
                 'girl_id'=>$girl,
                 'token'=>md5(rand(1, 10) . microtime())
             ]);
 
+            $fusion = Fusion::create([
+                'user_id'=>Auth::user()->id,
+                'fusion_id'=>$request->target_id,
+                'meet_id' => $meet->id
+            ]);
+            $fusion->load('fusion');
+            $fusion->load('meet');
+
+            Fusion::create([
+                'user_id'=>$request->target_id,
+                'fusion_id'=>Auth::user()->id,
+                'meet_id' => $meet->id
+            ]);
+
+
+
+
         }
-        return $match;
+
+        return response()->json([
+            'result' => $result,
+            'fusion' => $fusion,
+        ]);
     }
 }

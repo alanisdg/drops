@@ -40,7 +40,7 @@
                             </div>
                             <div class="d-flex flex-column align-items-center align-items-sm-start w100 ">
                                 <p>Conversaciones</p>
-                                    <match-component></match-component>
+                                <fusion-component></match-component>
                             </div>
                         </div>
                     </div>

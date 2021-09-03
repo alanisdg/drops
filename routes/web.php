@@ -49,10 +49,11 @@ Route::group(['middleware' => ['auth']], function () {
         |     USER
         |
         */
+
         Route::get('dashboard', [App\Http\Controllers\DashboardController::class,'index']  );
         Route::post('prospects', [App\Http\Controllers\UserController::class,'prospects']  );
         Route::post('swipe', [App\Http\Controllers\SwipeController::class,'swipe']  );
-        Route::post('matches', [App\Http\Controllers\MatchController::class,'matches']  );
+        Route::post('fusions', [App\Http\Controllers\FusionController::class,'fusions']  );
 
     });
 

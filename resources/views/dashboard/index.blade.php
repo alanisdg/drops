@@ -2,7 +2,7 @@
 @section('content')
 
 
-<prospects-component></prospects-component>
+<swipes-component></swipes-component>
 
 <videocall-component></videocall-component>
 

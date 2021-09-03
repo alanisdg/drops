@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMatchesTable extends Migration
+class CreateFusionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,17 @@ class CreateMatchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('matches', function (Blueprint $table) {
+        Schema::create('fusions', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger('user_id');
-
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->unsignedBigInteger('match_id');
+            $table->unsignedBigInteger('fusion_id');
+            $table->foreign('fusion_id')->references('id')->on('users');
 
-            $table->foreign('match_id')->references('id')->on('users');
-
-
+            $table->unsignedBigInteger('meet_id');
+            $table->foreign('meet_id')->references('id')->on('meets');
 
             $table->timestamps();
         });
@@ -37,6 +36,6 @@ class CreateMatchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('matches');
+        Schema::dropIfExists('fusions');
     }
 }
